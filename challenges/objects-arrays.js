@@ -99,12 +99,12 @@ for (i = 0; i < graduates.length; i++) {
   // Loop for university name parser
   for(j = 0; j < graduates[i].university.length; j++){
     // Step forward through the string and find three chars that make up the word "Uni"
-    let interString = "";
-    interString = interString + graduates[i].university[j];
-    interString = interString + graduates[i].university[j + 1];
-    interString = interString + graduates[i].university[j+ 2];
+    let iterString = "";
+    iterString = iterString + graduates[i].university[j];
+    iterString = iterString + graduates[i].university[j + 1];
+    iterString = iterString + graduates[i].university[j+ 2];
     // If "Uni" is found add to uni array
-    if (interString === "Uni" ) {
+    if (iterString === "Uni" ) {
       uni.push(graduates[i].university);
     }
 
@@ -136,10 +136,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
-zooAnimals.forEach(item = (item) => {
-animalNames.push("Name: " + item.animal_name + ", Scientific: " + item.scientific_name);
-});
-
+zooAnimals.forEach(item = (item) => animalNames.push("Name: " + item.animal_name + ", Scientific: " + item.scientific_name));
 console.log(animalNames);
 
 /* Request 2: .map()
@@ -166,7 +163,6 @@ The zoos need to know their total animal population across the United States.  F
 
 */
 const populationTotal = zooAnimals.reduce((acc, val) => acc += val.population, 0)
-console.log()
 console.log(populationTotal);
 
 /* 
